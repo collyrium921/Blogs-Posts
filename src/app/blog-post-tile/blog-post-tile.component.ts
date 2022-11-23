@@ -1,11 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { BlogPost } from '../blog-post';
 import { TruncatePipe } from '../truncate.pipe';
 
 @Component({
   selector: 'app-blog-post-tile',
   templateUrl: './blog-post-tile.component.html',
-  styleUrls: ['./blog-post-tile.component.scss']
+  styleUrls: ['./blog-post-tile.component.scss'],
+  //if you want to apply the styles to all the other components and not just this particular one
+  // encapsulation: ViewEncapsulation.None
 })
 export class BlogPostTileComponent implements OnInit {
   @Input() post!:BlogPost;
