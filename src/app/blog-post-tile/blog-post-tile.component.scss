@@ -1,5 +1,6 @@
 .blog-btn{
   font-weight: 600;
+  margin-right: 20px;
 }
 
 // .blog-tile{
@@ -9,4 +10,8 @@
 //to give the style to the complete component and not the markup inside the component
 :host{
   margin: 20px;
+}
+
+.fav{
+  background-color: lightgray;
 }

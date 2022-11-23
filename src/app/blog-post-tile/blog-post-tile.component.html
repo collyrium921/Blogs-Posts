@@ -1,6 +1,8 @@
 <!-- DUMB COMPONENT -->
 
-<div class="card blog-tile">
+<!-- <div class="card blog-tile" [ngClass]="post.isFav?'fav':''"> -->
+
+<div class="card blog-tile" [ngClass]="{'fav': post.isFav}">
   <div class="card-body">
     <h5 class="card-title">
      {{post.title}}
@@ -11,6 +13,7 @@
         <!-- using pipe through ts file -->
         {{post.summary}}
     </p>
-    <a href="#" class="btn btn-primary blog-btn">Read</a>
+    <a href="#" (click)="toggleFav()" class="btn btn-primary blog-btn">Favorite</a>
+    <a href="#" class="btn btn-primary">Read</a>
   </div>
 </div>
