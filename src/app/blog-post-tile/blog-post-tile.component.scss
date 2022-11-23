@@ -1,3 +1,12 @@
 .blog-btn{
   font-weight: 600;
 }
+
+// .blog-tile{
+//   margin: 20px;
+// }
+
+//to give the style to the complete component and not the markup inside the component
+:host{
+  margin: 20px;
+}
