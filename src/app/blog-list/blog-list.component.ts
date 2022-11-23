@@ -5,6 +5,7 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { BlogDataService } from '../blog-data.service';
 import { BlogPost } from '../blog-post';
 import { BlogPostTileComponent } from '../blog-post-tile/blog-post-tile.component';
 import { BLOG_POSTS } from '../blogPost';
@@ -24,10 +25,13 @@ export class BlogListComponent implements OnInit {
   @ViewChildren('tile')
   blogPostTileComponent!: QueryList<BlogPostTileComponent>;
 
-  constructor() {}
+  constructor(private blogDataService: BlogDataService) {}
 
   ngOnInit(): void {
-    this.blogPosts = BLOG_POSTS;
+    //without using service
+    // this.blogPosts = BLOG_POSTS;
+
+    this.blogPosts = this.blogDataService.getData()
   }
 
   updatePage(newPage: number) {
