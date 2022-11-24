@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChild, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shell',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-
+  @ContentChild('headerElem') headerElem: any;
   constructor() { }
 
   ngOnInit(): void {
