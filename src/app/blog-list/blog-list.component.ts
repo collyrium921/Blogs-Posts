@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   OnInit,
   QueryList,
@@ -13,8 +14,7 @@ import { BLOG_POSTS } from '../blogPost';
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.scss'],
-})
+  styleUrls: ['./blog-list.component.scss'],})
 export class BlogListComponent implements OnInit {
   blogPosts!: BlogPost[][];
   currentPage: number = 0;
@@ -44,5 +44,16 @@ export class BlogListComponent implements OnInit {
 
     //for multiple components used in markup
     this.blogPostTileComponent.forEach((e) => e.showFullSummary());
+  }
+
+  favAll(){
+    // this.blogPosts[this.currentPage].forEach(e=> e.isFav = true)
+
+    //when I use changeDetectionStrategy in the child component
+    this.blogPosts[this.currentPage].map(post=>({
+      title: post.title,
+      summary: post.summary,
+      isFav: true
+    }));
   }
 }

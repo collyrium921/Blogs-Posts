@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { BlogPost } from '../blog-post';
 import { TruncatePipe } from '../truncate.pipe';
 
@@ -6,6 +6,7 @@ import { TruncatePipe } from '../truncate.pipe';
   selector: 'app-blog-post-tile',
   templateUrl: './blog-post-tile.component.html',
   styleUrls: ['./blog-post-tile.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
   //if you want to apply the styles to all the other components and not just this particular one
   // encapsulation: ViewEncapsulation.None
 })
