@@ -4,10 +4,12 @@
 
 <div class="card blog-tile" [ngClass]="{'fav': post.isFav}">
   <div class="card-body">
-    <h5 class="card-title">
+    <!-- <h5 class="card-title" appHighlight="green"> -->
+      <!-- one attribute which is applying the directive and other is passing the value -->
+    <h5 class="card-title" appHighlight color="green" summaryColor="white">
      {{post.title}}
     </h5>
-    <p class="card-text" (click)="showFullSummary()">
+    <p class="card-text" (click)="showFullSummary()" appHighlight summaryColor="black">
       <!-- using pipe through markup -->
         <!-- {{post.summary | truncate: [30]}} -->
         <!-- using pipe through ts file -->
