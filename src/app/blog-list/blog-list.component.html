@@ -1,7 +1,11 @@
-<!-- SMART COMPONENT -->
 
-<p><a href="#" (click)="expandAll()">Expand All</a></p>
-<p><a href="#" (click)="favAll()">Favorite All</a></p>
+
+<!-- SMART COMPONENT -->
+<app-card>
+  <p><a href="#" (click)="expandAll()">Expand All</a></p>
+  <p><a href="#" (click)="favAll()">Favorite All</a></p>
+</app-card>
+
 <!-- for a single component -->
 <!-- <app-blog-post-tile [post]="blogPosts[0][0]" #tile></app-blog-post-tile> -->
 
@@ -14,3 +18,8 @@
   [numberOfPages]="blogPosts.length"
   (pageNumberClicked)="updatePage($event)"
 ></app-paginator>
+
+<!-- <app-card>
+  <h1>Heading</h1>
+  <p>Para</p>
+</app-card> -->
